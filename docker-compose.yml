@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:17          # versión fija, nunca "latest"
+    container_name: turnoya-db
+    environment:
+      POSTGRES_DB: turnoya       # nombre de la base de datos (ej: turnoya)
+      POSTGRES_USER: turnouser     # usuario que tú elijas
+      POSTGRES_PASSWORD: turnouser # contraseña que tú elijas
+    ports:
+      - "5439:5432"             # puerto de tu PC : puerto del contenedor
+    volumes:
+      - turnoya-data:/var/lib/postgresql/data
+
+volumes:
+  turnoya-data:
