@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+/** JPA entity that persists business data in the database. */
 @Entity
 @Table(name = "negocios")
 @Getter

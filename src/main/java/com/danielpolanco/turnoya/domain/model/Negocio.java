@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.util.Set;
 import java.util.UUID;
 
+/** Represents the domain model of a business that manages appointments. */
 public class Negocio {
 
     private Long id;
