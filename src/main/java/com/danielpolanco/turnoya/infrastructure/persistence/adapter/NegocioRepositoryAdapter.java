@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 import java.util.UUID;
 
-@Component                                   // Spring crea este objeto y lo gestiona
-public class NegocioRepositoryAdapter implements NegocioRepositoryPort {   // "yo encajo en ese enchufe"
+@Component                                   
+public class NegocioRepositoryAdapter implements NegocioRepositoryPort {  
 
     private final JpaNegocioRepository jpaRepository;
 
@@ -22,9 +22,9 @@ public class NegocioRepositoryAdapter implements NegocioRepositoryPort {   // "y
 
     @Override
     public Negocio guardar(Negocio negocio) {
-        NegocioEntity entity = NegocioMapper.toEntity(negocio);   // Negocio → Entity
-        NegocioEntity guardada = jpaRepository.save(entity);      // guarda en PostgreSQL
-        return NegocioMapper.toDomain(guardada);                  // Entity → Negocio (ya con id)
+        NegocioEntity entity = NegocioMapper.toEntity(negocio);   
+        NegocioEntity guardada = jpaRepository.save(entity);      
+        return NegocioMapper.toDomain(guardada);                  
     }
 
     @Override
