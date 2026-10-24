@@ -37,7 +37,7 @@ public class CalculadoraHuecos {
                 //9:00
                 LocalTime horaApertura = negocio.getHoraApertura();
                 LocalTime horaCierre = negocio.getHoraCierre();
-                while (!horaApertura.isAfter(horaCierre)){
+                while (!horaApertura.plusMinutes(negocio.getDuracionCitaMinutos()).isAfter(horaCierre)){
                     if (!horasOcupadas.contains(horaApertura)){
                         resultado.add(horaApertura);
                     }
